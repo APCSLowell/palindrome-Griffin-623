@@ -35,10 +35,15 @@ public void tester()
     }
   }
 }
+public void setup(){
+System.out.println(palindrome("Madam, I'm Adam!"));
+//System.out.println("test");
+}
+
 public boolean palindrome(String word)
 {
   
-  if(reverse(word.toLowerCase()).equals(onlyLetters(word).toLowerCase())){
+  if(reverse(noSpaces(onlyLetters(word)).toLowerCase()).equals(noSpaces(onlyLetters(word).toLowerCase()))){
   return true;
   }else{
   return false;
@@ -64,6 +69,17 @@ public String onlyLetters(String sString){
 
   return g;
 }
+
+public String noSpaces(String sWord){
+  String g = "";
+  for(int i=0;i<sWord.length();i++){
+    if(sWord.substring(i,i+1).equals(" ")==false){
+      g=g+sWord.substring(i,i+1);
+    }
+  }
+  return g;
+}
+
 
 
 }
